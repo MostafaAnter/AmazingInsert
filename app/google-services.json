@@ -1,0 +1,102 @@
+{
+  "project_info": {
+    "project_number": "289811581243",
+    "firebase_url": "https://makonway-1290.firebaseio.com",
+    "project_id": "makonway-1290",
+    "storage_bucket": "makonway-1290.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289811581243:android:ddd2e4d2bd1947bc",
+        "android_client_info": {
+          "package_name": "perfect_apps.makonway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289811581243-luuks1jt9kjaus3cal18ie33rc90jv4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "perfect_apps.makonway",
+            "certificate_hash": "EB19CD3C4477B6EBE7B8BDBED2D4C2A9F1D55DCF"
+          }
+        },
+        {
+          "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "289811581243-37l6mi01qlm9vb2hjbso635g7dbcumv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAspngQHSgcCOF6ZT7UMIJK3m4PL7rmWSU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289811581243-l05arppfuud1qut6n2v96ujbgbg8d2dh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.elsadany.makonway",
+                "app_store_id": "123456"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289811581243:android:da42a10a7f1481c8",
+        "android_client_info": {
+          "package_name": "com.mostafa_anter.amazinginsert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "289811581243-37l6mi01qlm9vb2hjbso635g7dbcumv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAspngQHSgcCOF6ZT7UMIJK3m4PL7rmWSU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
