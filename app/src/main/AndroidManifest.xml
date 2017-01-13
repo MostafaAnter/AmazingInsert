@@ -61,6 +61,12 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+
+        <provider
+            android:name=".provider.PlaceProvider"
+            android:authorities="in.wptrafficanalyzer.locationsherlocksearchviewmapv2.PlaceProvider"
+            android:exported="false" />
+
     </application>
 
 </manifest>

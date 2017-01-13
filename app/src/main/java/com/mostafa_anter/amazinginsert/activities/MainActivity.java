@@ -1,20 +1,24 @@
 package com.mostafa_anter.amazinginsert.activities;
 
+import android.app.LoaderManager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
+
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuInflater;
-import android.view.View;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,8 +26,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.mostafa_anter.amazinginsert.R;
+import com.mostafa_anter.amazinginsert.provider.PlaceProvider;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,
+        LoaderManager.LoaderCallbacks<Cursor> {
 
     private GoogleMap mMap;
 
@@ -80,15 +86,69 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
         handleIntent(intent);
+
     }
 
-    private void handleIntent(Intent intent) {
-
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data somehow
-            Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
+    private void handleIntent(Intent intent){
+        if(intent.getAction().equals(Intent.ACTION_SEARCH)){
+            doSearch(intent.getStringExtra(SearchManager.QUERY));
+        }else if(intent.getAction().equals(Intent.ACTION_VIEW)){
+            getPlace(intent.getStringExtra(SearchManager.EXTRA_DATA_KEY));
         }
+    }
+
+    private void doSearch(String query){
+        Bundle data = new Bundle();
+        data.putString("query", query);
+        getLoaderManager().restartLoader(0, data, this);
+    }
+
+    private void getPlace(String query){
+        Bundle data = new Bundle();
+        data.putString("query", query);
+        getLoaderManager().restartLoader(1, data, this);
+    }
+
+
+
+
+    private void showLocations(Cursor c){
+        MarkerOptions markerOptions = null;
+        LatLng position = null;
+        mMap.clear();
+        while(c.moveToNext()){
+            markerOptions = new MarkerOptions();
+            position = new LatLng(Double.parseDouble(c.getString(1)),Double.parseDouble(c.getString(2)));
+            markerOptions.position(position);
+            markerOptions.title(c.getString(0));
+            mMap.addMarker(markerOptions);
+        }
+        if(position!=null){
+            CameraUpdate cameraPosition = CameraUpdateFactory.newLatLng(position);
+            mMap.animateCamera(cameraPosition);
+        }
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+        CursorLoader cLoader = null;
+        if(i==0)
+            cLoader = new CursorLoader(getBaseContext(), PlaceProvider.SEARCH_URI, null, null, new String[]{ bundle.getString("query") }, null);
+        else if(i==1)
+            cLoader = new CursorLoader(getBaseContext(), PlaceProvider.DETAILS_URI, null, null, new String[]{ bundle.getString("query") }, null);
+        return cLoader;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        showLocations(cursor);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
     }
 }
