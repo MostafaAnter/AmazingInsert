@@ -84,7 +84,7 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:hint="Address"
-                android:inputType="number"
+                android:inputType="text"
                 android:maxLines="1"
                 android:textStyle="bold" />
 
