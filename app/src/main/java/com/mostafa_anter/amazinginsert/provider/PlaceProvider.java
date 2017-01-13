@@ -39,6 +39,7 @@ public class PlaceProvider extends ContentProvider {
 	private static final int DETAILS = 3;
 	
 	// Obtain browser key from https://code.google.com/apis/console
+	// replace with your google place api key
     String mKey = "key=AIzaSyAdN258isY7K6_fEKR3U61pCU3J30dKePI";
 	
 	// Defines a set of uris allowed with this content provider
