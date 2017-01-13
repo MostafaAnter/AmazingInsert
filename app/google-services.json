@@ -44,16 +44,16 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
               "client_id": "289811581243-l05arppfuud1qut6n2v96ujbgbg8d2dh.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.elsadany.makonway",
                 "app_store_id": "123456"
               }
+            },
+            {
+              "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
+              "client_type": 3
             }
           ]
         },
@@ -70,6 +70,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "289811581243-bu1ahe8v57rd9o1io6gp4o0iveeu9lt7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mostafa_anter.amazinginsert",
+            "certificate_hash": "59B9DE2FF6D44262E7EB95B85D7DF49ABD1DEE0D"
+          }
+        },
         {
           "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
           "client_type": 3
@@ -89,8 +97,21 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289811581243-l05arppfuud1qut6n2v96ujbgbg8d2dh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.elsadany.makonway",
+                "app_store_id": "123456"
+              }
+            },
+            {
+              "client_id": "289811581243-mqb0gcv2l7uenbdoj3j0tk3ad0he8l3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
